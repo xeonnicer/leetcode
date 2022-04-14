@@ -28,17 +28,37 @@ class Solution:
         dummy_head = ListNode(-1)
         dummy_head.next = head
 
-
         return head
 
+    # def find_enough_nodes(self, pre_node):
+    #     """
+    #     pre_node point at the node before start node
+    #     find start form node, return True if enough nodes, else False
+    #     :param node:
+    #     :return:
+    #     """
+    #
+    #     for
+    def find_and_reverse(self, pre_node, curr, k):
+        # start = pre_node.next
+        p = pre_node
+        count = 0
+        next_step = None
+        while p:
+            p = p.next
+            count += 1
+            if count == k:
+                end = p
+                next_step = p
+                self.reverse(pre_node, p, end)
+                return True, end, next_step
+        if count != k:
+            return False, None, None
 
-
-
-
-
-
-
-
-
-
-
+    def reverse(self, pre, curr, end):
+        while curr and curr != end:
+            next = curr.next
+            curr.next = pre
+            pre = curr
+            curr = next
+        # 当curr指向null时，循环跳出，此时pre指向新链表的第一个节点
