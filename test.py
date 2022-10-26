@@ -1,3 +1,6 @@
-a = {1: 2}
-a.pop(1)
+import re
+
+
+a = re.findall('A', 'ABCABC')
 print(a)
+print(len(a))

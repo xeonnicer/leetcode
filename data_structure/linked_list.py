@@ -8,4 +8,8 @@ class ListNode:
         self.next = next
 
     def __repr__(self):
-        return f'ListNode( {self.val}, {self.next} )'
+        # return f'ListNode( {self.val}, {self.next} )'
+        return str(self.val)
+
+    def __str__(self):
+        return str(self.val)

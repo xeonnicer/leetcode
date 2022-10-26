@@ -6,4 +6,18 @@ class Solution:
         # define dp[i] = last i characters  in wordDict
         length = len(s)
         dp = [False for i in range(length + 1)]
-        dp[0] = 0
+        dp[0] = True
+        for i in range(length):
+            for j in range(i + 1, length + 1):
+                if (dp[i] and (s[i:j] in wordDict)):
+                    dp[j] = True
+                    
+
+        # print(dp)
+        return dp[length]
+
+
+s = "aaaaaaa"
+wordDict = ["aaaa", "aaa"]
+ans = Solution().wordBreak(s, wordDict)
+print(ans)
