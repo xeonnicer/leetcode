@@ -4,10 +4,9 @@ import sys
 #     print(int(a[0]) + int(a[1]))
 
 
-
-
 # 本题为考试多行输入输出规范示例，无需提交，不计分。
 import sys
+
 if __name__ == "__main__":
     # # 读取第一行的n
     # n = int(sys.stdin.readline().strip())
@@ -22,4 +21,4 @@ if __name__ == "__main__":
     # print(ans)
     # a = [1,2,3]
     # print(sum(a))
-    print(0+3>>1)
+    pass
