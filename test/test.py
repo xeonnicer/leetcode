@@ -8,6 +8,7 @@ import sys
 import sys
 
 import heapq
+import re
 
 if __name__ == "__main__":
     # # 读取第一行的n
@@ -26,5 +27,8 @@ if __name__ == "__main__":
     # a = [5, 6, 7, 8]
     # b = [5, 6, 7, 8]
     # print(a == b)
-    print(19.0 == 19)
-    pass
+    # print(19.0 == 19)
+
+    test = '-1+(  -1+2)'
+    print(test.replace(' ', ''))
+    # print(match.)

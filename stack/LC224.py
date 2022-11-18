@@ -38,6 +38,9 @@ class Solution:
                     else:
                         ops.pop()
                         break # new code1
+                if ops and ops[-1] != '(':
+                    # code01
+                    self.cal_stack_until_ops_none(ops, nums)
             elif s[i].isdigit():
                 # print('fork: digit')
                 # input num which maybe more 10
@@ -67,8 +70,9 @@ class Solution:
                 print(s[i])
                 print(s)
             i += 1
-        if ops:
-            self.cal_stack_until_ops_none(ops, nums)
+        # 可以在最后再补充运算一次也可以在code01位置运算一次，因为，最后可能剩余一组运算符没有处理
+        # if ops:
+        #     self.cal_stack_until_ops_none(ops, nums)
         print(ops)
         print(nums)
         return int(nums[-1])
@@ -87,7 +91,7 @@ class Solution:
 
 
 # s = "(1+(4+5+2)-3)+((6)+18)"  # 33
-s = "1 + 1"                # 2
+# s = "1 + 1"                # 2
 # s = " - 1 + 2 - 1"          # 0
 # s = "-1 + (-1+2 )"          # 0
 # s = "2147483647"             # 2147483647
@@ -98,7 +102,7 @@ s = "1 + 1"                # 2
 # s = '(10) + 5 -( 1+2)'         # 12
 # s = '(10 + 5) -( 1+2)'         # 12
 # s = '(10 + 5 -( 1+2))'         # 12
-# s = '(10 + 5 - 1+2)'         # 16
+s = '(10 + 5 - 1+2)'         # 16
 # s = "2-4-(8+2-6+(8+4-(1)+8-10))"  # -15
 ans = Solution().calculate(s)
 print(ans)
