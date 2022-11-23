@@ -13,3 +13,12 @@ class ListNode:
 
     def __str__(self):
         return str(self.val)
+
+    # @staticmethod
+    def display_from_current(self):
+        path = []
+        work = self
+        while work:
+            path.append(work.val)
+            work = work.next
+        return ' -> '.join(str(i) for i in path)

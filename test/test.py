@@ -29,6 +29,7 @@ if __name__ == "__main__":
     # print(a == b)
     # print(19.0 == 19)
 
-    test = '-1+(  -1+2)'
-    print(test.replace(' ', ''))
+    # test = '-1+(  -1+2)'
+    # print(test.replace(' ', ''))
+    print(sum([True, False]))
     # print(match.)

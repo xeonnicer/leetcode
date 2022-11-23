@@ -1,6 +1,6 @@
 import re
 
+a = [1, 2, 3]
 
-a = re.findall('A', 'ABCABC')
+a = all(map(lambda x: x < 4, a))
 print(a)
-print(len(a))
