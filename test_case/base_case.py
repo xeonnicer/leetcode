@@ -1,5 +1,7 @@
 from abc import abstractmethod
 
+null = None
+
 
 class BaseCase:
     @abstractmethod
