@@ -1,35 +1,56 @@
-import sys
-# for line in sys.stdin:
-#     a = line.split()
-#     print(int(a[0]) + int(a[1]))
+# bubble sort
+from typing import List
 
 
-# 本题为考试多行输入输出规范示例，无需提交，不计分。
-import sys
+def bubble_sort(nums: List[int]):
+    length = len(nums)
+    for i in range(length - 1):
+        for j in range(0, length - 1 - i):
+            if nums[j] > nums[j + 1]:
+                nums[j], nums[j + 1] = nums[j + 1], nums[j]
+    return
 
-import heapq
-import re
 
-if __name__ == "__main__":
-    # # 读取第一行的n
-    # n = int(sys.stdin.readline().strip())
-    # ans = 0
-    # for i in range(n):
-    #     # 读取每一行
-    #     line = sys.stdin.readline().strip()
-    #     # 把每一行的数字分隔后转化成int列表
-    #     values = list(map(int, line.split()))
-    #     for v in values    #         ans += v
-    #     # print(ans):
+def pick_sort(nums: List[int]):
+    length = len(nums)
+    for i in range(length - 1):
+        min_index = i
+        for j in range(i + 1, length):
+            if nums[j] < nums[min_index]:
+                min_index = j
 
-    # a = [1,2,3]
-    # print(sum(a))
-    # a = [5, 6, 7, 8]
-    # b = [5, 6, 7, 8]
-    # print(a == b)
-    # print(19.0 == 19)
+        if min_index != i:
+            nums[i], nums[min_index] = nums[min_index], nums[i]
+    return
 
-    # test = '-1+(  -1+2)'
-    # print(test.replace(' ', ''))
-    print(sum([True, False]))
-    # print(match.)
+
+def quick_sort(nums: List[int], left, right):
+    def partition(arr, left, right):
+        pivot = arr[left]
+        while left < right:
+            while left < right and arr[right] >= pivot:
+                right -= 1
+            arr[left] = arr[right]
+            while left < right and arr[left] <= pivot:
+                left += 1
+            arr[right] = arr[left]
+        arr[left] = pivot
+        return left
+
+    if left < right:
+        mid = partition(nums, left, right)
+        quick_sort(nums, left, mid - 1)
+        quick_sort(nums, mid + 1, right)
+
+
+nums = [9, 2, 67, 77, 2, 5, 200, 0, 9]
+nums = [8, 1, 9, 17, 19, 97]
+nums = [5, 7, 4, 6, 3, 1, 2, 9, 8]
+
+# bubble_sort(nums)
+# pick_sort(nums)
+# quick_sort(nums, 0, len(nums) - 1)
+# print(nums)
+
+
+
