@@ -43,14 +43,17 @@ def quick_sort(nums: List[int], left, right):
         quick_sort(nums, mid + 1, right)
 
 
-nums = [9, 2, 67, 77, 2, 5, 200, 0, 9]
-nums = [8, 1, 9, 17, 19, 97]
-nums = [5, 7, 4, 6, 3, 1, 2, 9, 8]
+# nums = [9, 2, 67, 77, 2, 5, 200, 0, 9]
+# nums = [8, 1, 9, 17, 19, 97]
+# nums = [5, 7, 4, 6, 3, 1, 2, 9, 8]
 
 # bubble_sort(nums)
 # pick_sort(nums)
 # quick_sort(nums, 0, len(nums) - 1)
 # print(nums)
 
-
+r = 0
+r = 3
+for r in range(r, 0, -1):
+    print(r)
 
