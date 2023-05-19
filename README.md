@@ -1,2 +1,2 @@
-# leecode
-My leecode question solving code
+# leetcode
+My leetcode question solving code
